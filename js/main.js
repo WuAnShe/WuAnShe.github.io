@@ -8,7 +8,9 @@ const vm = new Vue({
         play(url) {
             const ad = document.getElementById('player');
             ad.src = './resource/voices/' + url;
-            ad.onerror = function () {
+            console.log(ad.src);
+            ad.onerror = function (e) {
+                console.log(e);
                 alert('音频播放失败..')
             }
             ad.play();
