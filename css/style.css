@@ -12,6 +12,11 @@ body{
     line-height: 1.5;
 }
 
+/* 当vue.js加载比较缓慢是，用来隐藏那些{{}}代码的 */
+[v-cloak] {
+    display: none !important;
+}
+
 .kano{
     background: pink;
 }
@@ -28,6 +33,19 @@ body{
     background:rgb(188, 120, 241);
 }
 
+.kohigashi-2{
+    background: rgb(151, 209, 227);
+}
+
+.kohigashi-3{
+    background: rgb(83, 119, 172);
+}
+
+.kohigashi-4{
+    background: rgb(93, 194, 227);
+}
+
+
 li{
     list-style: none;
 
@@ -39,6 +57,7 @@ a{
 }
 
 a:hover{
+    cursor: pointer;
     font-weight: bold;
 }
 
@@ -53,9 +72,11 @@ a:hover{
 
 .left-menu{
     display: flex;
-    align-items: center;
     flex: 1;
     margin-left: 20px;
+    /* 用align-items:center;没用是什么鬼 */
+    padding-top: 3px;
+
 }
 
 .left-menu li{
@@ -63,7 +84,7 @@ a:hover{
 }
 
 .left-menu img{
-    width: 30px;
+    height: 18px;
 }
 
 .content-container{
@@ -72,9 +93,8 @@ a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 30px;
 }
-
-
 
 .voice-content{
     width: 100%;
@@ -101,8 +121,30 @@ a:hover{
     border-radius: 10px;
     padding: 4px;
     margin: 4px 4px;
+    min-width: 60px;
+    text-align: center;
+}
+
+.voice-items li:hover{
+    cursor: pointer;
 }
 
 .footer{
-    background: #777;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #ebebeb;
+    padding: 5px 0;
+}
+
+.footer a{
+    margin-left: 15px;
+    color:#666;
+    font-size: 14px;
+}
+
+.github-logo{
+    position: relative;
+    top: 3px;
+    width: 15px;
 }

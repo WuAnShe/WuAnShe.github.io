@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="icon" href="./favicon.ico">
     <title>1107 小东人鱼</title>
 </head>
 
@@ -16,7 +14,7 @@
         <audio id="player" src=""></audio>
         <nav class="main-nav">
 
-            <a href="#">
+            <a href="">
                 人鱼按钮
             </a>
             <ul class="left-menu">
@@ -34,39 +32,17 @@
 
             <ul class="right-menu">
                 <li>
-                    <a @click="changeLanguage">{{currentLanguage === 'ch' ? '日本語' : '简体中文'}}</a>
+                    <a v-cloak @click="changeLanguage">{{currentLanguage === 'ch' ? '日本語' : '简体中文'}}</a>
                 </li>
             </ul>
         </nav>
-
-
         <section class="content-container">
-            <div class="voice-content">
-                <div class="voice-type kano">Kano dayo</div>
-                <div>
-                    <ul class="voice-items">
-                        <li class="kohigashi" v-for="item in voiceList" @click="play(item.url)">
-                            {{currentLanguage === 'ch' ? item.desCh : item.desJp}}
-                        </li>
-                    </ul>
+            <div class="voice-content" v-for="outer in voiceList">
+                <div v-cloak class="voice-type kohigashi-4">{{currentLanguage === 'ch' ? outer.titleCh : outer.titleJp}}
                 </div>
-            </div>
-            <div class="voice-content">
-                <div class="voice-type hanamaru">Hanamaru kita!</div>
                 <div>
                     <ul class="voice-items">
-                        <li class="kohigashi" v-for="item in voiceList" @click="play(item.url)">
-                            {{currentLanguage === 'ch' ? item.desCh : item.desJp}}
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="voice-content">
-                <div class="voice-type nonono">nonono desu~</div>
-                <div>
-                    <ul class="voice-items">
-                        <li class="kohigashi" v-for="item in voiceList" @click="play(item.url)">
+                        <li v-cloak class="kohigashi" v-for="item in outer.voice" @click="play(item.url)">
                             {{currentLanguage === 'ch' ? item.desCh : item.desJp}}
                         </li>
                     </ul>
@@ -74,48 +50,17 @@
             </div>
         </section>
         <footer class="footer">
-            这里是footer
+            <a href="https://space.bilibili.com/31049854?from=search&seid=8414213156499637597">
+                小东人鱼午安社制作
+            </a>
+            <a href="https://github.com/WuAnShe/WuAnShe.github.io">
+                <img class="github-logo" src="./resource/img/GitHub-Mark-32px.png" />
+            </a>
         </footer>
     </div>
 </body>
-<script>
-    const vm = new Vue({
-        el: '#app',
-        data: {
-            voiceList: [{
-                desCh: 'bubu',
-                desJp: 'ひとな',
-                url: './resource/voices/bubu.wav'
-            }, {
-                desCh: 'bubu',
-                desJp: 'ひとな２',
-                url: './resource/voices/bubu.wav'
-            }, {
-                desCh: 'bubu',
-                desJp: 'ひとな３',
-                url: './resource/voices/bubu.wav'
-            }],
-            currentLanguage: 'ch'
-        },
-        methods: {
-            play(url) {
-                const ad = new Audio(url);
-                // player.src = url;
-                ad.onerror = function(){
-                    alert('error message: 浏览器不支持播放')
-                }
-                ad.play();
-            },
-            changeLanguage() {
-                if (this.currentLanguage === 'ch') {
-                    this.currentLanguage = 'jp';
-                } else {
-                    this.currentLanguage = 'ch';
-                }
-            }
-        },
-    });
-</script>
-
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./mainfest.js"></script>
+<script src="./js/main.js"></script>
 
 </html>
