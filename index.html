@@ -101,6 +101,9 @@
             play(url) {
                 let player = document.getElementById('player');
                 player.src = url;
+                player.onerror = function(){
+                    alert('浏览器不支持播放')
+                }
                 player.play();
             },
             changeLanguage() {
