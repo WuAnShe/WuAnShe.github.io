@@ -1,3 +1,4 @@
+const vConsole = new vConsole();
 const vm = new Vue({
     el: '#app',
     data: {
