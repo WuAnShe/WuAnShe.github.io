@@ -12,6 +12,22 @@ body{
     line-height: 1.5;
 }
 
+.kano{
+    background: pink;
+}
+
+.hanamaru{
+    background: orange;
+}
+
+.nonono{
+    background: azure;
+}
+
+.kohigashi{
+    background:rgb(188, 120, 241);
+}
+
 li{
     list-style: none;
 
@@ -58,17 +74,7 @@ a:hover{
     align-items: center;
 }
 
-.kano{
-    background: pink;
-}
 
-.hanamaru{
-    background: orange;
-}
-
-.nonono{
-    background: azure;
-}
 
 .voice-content{
     width: 100%;
@@ -94,7 +100,6 @@ a:hover{
     border: #000 1px solid;
     border-radius: 10px;
     padding: 4px;
-    background:rgb(188, 120, 241);
     margin: 4px 4px;
 }
 

@@ -13,6 +13,7 @@
 
 <body>
     <div id="app">
+        <audio id="player" src=""></audio>
         <nav class="main-nav">
 
             <a href="#">
@@ -44,7 +45,7 @@
                 <div class="voice-type kano">Kano dayo</div>
                 <div>
                     <ul class="voice-items">
-                        <li v-for="item in voiceList" @click="play(item.url)">
+                        <li class="kohigashi" v-for="item in voiceList" @click="play(item.url)">
                             {{currentLanguage === 'ch' ? item.desCh : item.desJp}}
                         </li>
                     </ul>
@@ -54,7 +55,7 @@
                 <div class="voice-type hanamaru">Hanamaru kita!</div>
                 <div>
                     <ul class="voice-items">
-                        <li v-for="item in voiceList" @click="play(item.url)">
+                        <li class="kohigashi" v-for="item in voiceList" @click="play(item.url)">
                             {{currentLanguage === 'ch' ? item.desCh : item.desJp}}
                         </li>
                     </ul>
@@ -65,7 +66,7 @@
                 <div class="voice-type nonono">nonono desu~</div>
                 <div>
                     <ul class="voice-items">
-                        <li v-for="item in voiceList" @click="play(item.url)">
+                        <li class="kohigashi" v-for="item in voiceList" @click="play(item.url)">
                             {{currentLanguage === 'ch' ? item.desCh : item.desJp}}
                         </li>
                     </ul>
@@ -98,8 +99,9 @@
         },
         methods: {
             play(url) {
-                console.log(url);
-                new Audio(url).play();
+                let player = document.getElementById('player');
+                player.src = url;
+                player.play();
             },
             changeLanguage() {
                 if (this.currentLanguage === 'ch') {
