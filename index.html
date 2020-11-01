@@ -99,12 +99,12 @@
         },
         methods: {
             play(url) {
-                let player = document.getElementById('player');
-                player.src = url;
-                player.onerror = function(){
+                const ad = new Audio(url);
+                // player.src = url;
+                ad.onerror = function(){
                     alert('浏览器不支持播放')
                 }
-                player.play();
+                ad.play();
             },
             changeLanguage() {
                 if (this.currentLanguage === 'ch') {
