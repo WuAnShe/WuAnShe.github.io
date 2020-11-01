@@ -88,6 +88,7 @@ a:hover{
     display: flex;
     justify-content: center;
     margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 .voice-items li{
@@ -95,7 +96,7 @@ a:hover{
     border-radius: 10px;
     padding: 4px;
     background:rgb(188, 120, 241);
-    margin: 0 4px;
+    margin: 4px 4px;
 }
 
 .footer{
