@@ -32,8 +32,7 @@ a:hover{
     align-items: center;
     background: #f8f8f8;
     border-bottom: 1px #e7e7e7 solid;
-    margin-top: 3px;
-    padding: 0 25px;
+    padding: 7px 25px 0 25px;
 }
 
 .left-menu{
