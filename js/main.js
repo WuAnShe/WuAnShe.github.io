@@ -2,25 +2,32 @@ const vm = new Vue({
     el: '#app',
     data: {
         voiceList: mainfest.kohiList,
-        currentLanguage: 'ch'
+        currentLanguage: 'ch',
+        currentUrl:'',
+        itemStyle:'stop'
+    },
+    mounted() {
+        this.$refs['player'].onerror = function (e) {
+            alert('抱歉，您的浏览器不支持播放');
+        },
+        this.$refs['player'].onended = ()=>{
+            this.currentUrl = '';
+        }
     },
     methods: {
         play(url) {
-            const ad = document.getElementById('player');
-            ad.src = './resource/voices/' + url;
-            console.log(ad.src);
-            ad.onerror = function (e) {
-                console.log(e);
-                alert('音频播放失败..')
+            if(this.currentUrl === url && !this.$refs['player'].paused){
+                this.$refs['player'].pause();
+                this.currentUrl = '';
+                return;
             }
-            ad.play();
+            this.$refs['player'].src = './resource/voices/' + url;
+            this.itemStyle = 'playing';
+            this.currentUrl = url;
+            this.$refs['player'].play();
         },
         changeLanguage() {
-            if (this.currentLanguage === 'ch') {
-                this.currentLanguage = 'jp';
-            } else {
-                this.currentLanguage = 'ch';
-            }
+            this.currentLanguage = this.currentLanguage === 'ch' ? 'jp' : 'ch';
         }
-    },
+    }
 });
