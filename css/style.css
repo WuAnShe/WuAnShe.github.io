@@ -2,10 +2,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
 }
 
 body{
@@ -14,7 +10,6 @@ body{
     color: #000;
     font-size: 15px;
     line-height: 1.5;
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 /* 当vue.js加载比较缓慢是，用来隐藏那些{{}}代码的 */
@@ -59,8 +54,13 @@ li{
 a{
     color: #777;
     text-decoration: none;
-    cursor: pointer;
 }
+
+a:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
+
 
 .main-nav{
     display: flex;
@@ -123,8 +123,10 @@ a{
     margin: 4px 4px;
     min-width: 60px;
     text-align: center;
+}
+
+.voice-items li:hover{
     cursor: pointer;
-    transition: background-color .5s;
 }
 
 .footer{
@@ -145,8 +147,4 @@ a{
     position: relative;
     top: 3px;
     width: 15px;
-}
-
-.playing{
-    background-color: lightpink;
 }

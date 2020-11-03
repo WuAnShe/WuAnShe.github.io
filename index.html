@@ -11,19 +11,20 @@
 
 <body>
     <div id="app">
-        <audio id="player" ref="player"></audio>
+        <audio id="player" src=""></audio>
         <nav class="main-nav">
+
             <a href="">
                 {{currentLanguage === 'ch' ? '人鱼按钮' : 'ひとなボタン'}}
             </a>
             <ul class="left-menu">
                 <li>
-                    <a href="https://www.youtube.com/channel/UCV2m2UifDGr3ebjSnDv5rUA" target="_blank">
+                    <a href="https://www.youtube.com/channel/UCV2m2UifDGr3ebjSnDv5rUA">
                         <img src="resource/img/youtube.png" alt="">
                     </a>
                 </li>
                 <li>
-                    <a href="https://twitter.com/kohigashihitona" target="_blank">
+                    <a href="https://twitter.com/kohigashihitona">
                         <img src="resource/img/twitter.png" alt="">
                     </a>
                 </li>
@@ -41,7 +42,7 @@
                 </div>
                 <div>
                     <ul class="voice-items">
-                        <li v-cloak v-for="item in outer.voice" @click="play(item.url)" :class="item.url === currentUrl ? ('kohigashi ' + itemStyle ) : 'kohigashi'">
+                        <li v-cloak class="kohigashi" v-for="item in outer.voice" @click="play(item.url)">
                             {{currentLanguage === 'ch' ? item.desCh : item.desJp}}
                         </li>
                     </ul>
@@ -49,10 +50,10 @@
             </div>
         </section>
         <footer class="footer">
-            <a href="https://space.bilibili.com/31049854?from=search&seid=8414213156499637597" target="_blank">
-                {{currentLanguage === 'ch' ? '小东人鱼午安社制作' : '小東ひとな午安社より製作する'}}
+            <a href="https://space.bilibili.com/31049854?from=search&seid=8414213156499637597">
+                小东人鱼午安社制作
             </a>
-            <a href="https://github.com/WuAnShe/WuAnShe.github.io" target="_blank">
+            <a href="https://github.com/WuAnShe/WuAnShe.github.io">
                 <img class="github-logo" src="./resource/img/GitHub-Mark-32px.png" />
             </a>
         </footer>
