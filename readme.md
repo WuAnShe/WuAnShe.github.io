@@ -18,3 +18,4 @@
 ### 知识产权申明
 - 部分idea参考[祭按钮](https://natsuiromatsuri.moe/)、[夸按钮](https://aquaminato.moe/)、[mea按钮](https://meamea.moe)
 - 框架使用：[Vue](https://vuejs.org)
+- 工具使用：[excel转json工具](https://neil3d.gitee.io/coding/excel2json.html)
