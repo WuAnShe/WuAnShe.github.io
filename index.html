@@ -13,7 +13,7 @@
     <div id="app">
         <audio id="player" ref="player"></audio>
         <nav class="main-nav">
-            <a href="">
+            <a v-cloak href="">
                 {{currentLanguage === 'ch' ? '人鱼按钮' : 'ひとなボタン'}}
             </a>
             <ul class="left-menu">
@@ -37,7 +37,7 @@
         </nav>
         <section class="content-container">
             <div class="voice-content" v-for="(outer, outerIndex) in voiceList">
-                <div v-cloak class="voice-type kohigashi-4">{{currentLanguage === 'ch' ? outer.titleCh : outer.titleJp}}
+                <div v-cloak class="voice-type">{{currentLanguage === 'ch' ? outer.titleCh : outer.titleJp}}
                 </div>
                 <div>
                     <ul class="voice-items">
@@ -55,7 +55,7 @@
             </div>
         </section>
         <footer class="footer">
-            <a href="https://space.bilibili.com/31049854?from=search&seid=8414213156499637597" target="_blank">
+            <a v-cloak href="https://space.bilibili.com/31049854?from=search&seid=8414213156499637597" target="_blank">
                 {{currentLanguage === 'ch' ? '小东人鱼午安社制作' : '小東ひとな午安社より製作する'}}
             </a>
             <a href="https://github.com/WuAnShe/WuAnShe.github.io" target="_blank">
@@ -65,6 +65,7 @@
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./js/data.js"></script>
 <script src="./mainfest.js"></script>
 <script src="./js/main.js"></script>
 

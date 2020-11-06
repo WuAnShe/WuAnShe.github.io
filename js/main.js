@@ -4,27 +4,28 @@ const vm = new Vue({
     data: {
         voiceList: MAINFEST,
         currentLanguage: 'ch',
-        currentUrl:'',
+        currentUrl: '',
         isPaused: false
     },
     mounted() {
-        player.onerror = function () {
+        player.onerror = () => {
             alert('抱歉，您的浏览器不支持播放');
         },
-        player.onended = ()=>{
+        player.onended = () => {
             this.currentUrl = '';
             this.isPaused = false;
         }
     },
     methods: {
         play(url) {
+            console.log(url);
             this.isPaused = false;
-            if(this.currentUrl === url && !player.paused){
+            if (this.currentUrl === url && !player.paused) {
                 player.pause();
                 this.isPaused = true;
                 return;
             }
-            if(this.currentUrl === url && player.paused){
+            if (this.currentUrl === url && player.paused) {
                 player.play();
                 this.isPaused = false;
                 return;

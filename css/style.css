@@ -18,7 +18,7 @@ body{
     -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
-/* 当vue.js加载比较缓慢是，用来隐藏那些{{}}代码的 */
+/* 当vue.js加载比较缓慢时，用来隐藏那些{{}}代码的 */
 [v-cloak] {
     display: none !important;
 }
@@ -102,10 +102,10 @@ a{
 }
 
 .voice-type{
-    border: #000 1px solid;
-    border-radius: 10px;
+    background: #dbdbdb;
+    border-radius: 15px;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     padding: 2px 0;
 }
 
@@ -121,7 +121,7 @@ a{
     border-radius: 15px;
     padding-left: 12px;
     padding-right: 12px;
-    height: 30px;
+    min-height: 30px;
     line-height: 30px;
     margin: 4px 4px;
     min-width: 60px;
