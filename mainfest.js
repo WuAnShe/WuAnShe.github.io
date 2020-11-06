@@ -7,16 +7,15 @@ let res = [];
 let invalidList = [];
 for (let obj of arr) {
 
-  if (obj.titleCh === "" || obj.desCh === "" && obj.desJp === "") {
+  if (obj.titleCh === "" || (obj.desCh === "" && obj.desJp === "")) {
     invalidList.push(obj);
     continue;
   }
 
+  //空字符用另一语言替换
   obj.desCh = obj.desCh === "" ? obj.desJp : obj.desCh;
   obj.desJp = obj.desJp === "" ? obj.desCh : obj.desJp;
-  if (obj.desJp === "") {
-    obj.desJp = obj.desCh;
-  }
+
   if (!(obj.titleCh in titleMap)) {
     titleMap[obj.titleCh] = index++;  //保存索引后，index自增
 
