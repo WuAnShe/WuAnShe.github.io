@@ -1,30 +1,37 @@
+const palyer = document.getElementById('player');
 const vm = new Vue({
     el: '#app',
     data: {
-        voiceList: mainfest.kohiList,
+        voiceList: MAINFEST,
         currentLanguage: 'ch',
         currentUrl:'',
-        itemStyle:'stop'
+        isPaused: false
     },
     mounted() {
-        this.$refs['player'].onerror = function (e) {
+        player.onerror = function () {
             alert('抱歉，您的浏览器不支持播放');
         },
-        this.$refs['player'].onended = ()=>{
+        player.onended = ()=>{
             this.currentUrl = '';
+            this.isPaused = false;
         }
     },
     methods: {
         play(url) {
-            if(this.currentUrl === url && !this.$refs['player'].paused){
-                this.$refs['player'].pause();
-                this.currentUrl = '';
+            this.isPaused = false;
+            if(this.currentUrl === url && !player.paused){
+                player.pause();
+                this.isPaused = true;
                 return;
             }
-            this.$refs['player'].src = './resource/voices/' + url;
-            this.itemStyle = 'playing';
+            if(this.currentUrl === url && player.paused){
+                player.play();
+                this.isPaused = false;
+                return;
+            }
             this.currentUrl = url;
-            this.$refs['player'].play();
+            player.src = './resource/voices/' + url;
+            player.play();
         },
         changeLanguage() {
             this.currentLanguage = this.currentLanguage === 'ch' ? 'jp' : 'ch';

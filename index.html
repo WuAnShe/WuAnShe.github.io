@@ -36,13 +36,19 @@
             </ul>
         </nav>
         <section class="content-container">
-            <div class="voice-content" v-for="outer in voiceList">
+            <div class="voice-content" v-for="(outer, outerIndex) in voiceList">
                 <div v-cloak class="voice-type kohigashi-4">{{currentLanguage === 'ch' ? outer.titleCh : outer.titleJp}}
                 </div>
                 <div>
                     <ul class="voice-items">
-                        <li v-cloak v-for="item in outer.voice" @click="play(item.url)" :class="item.url === currentUrl ? ('kohigashi ' + itemStyle ) : 'kohigashi'">
-                            {{currentLanguage === 'ch' ? item.desCh : item.desJp}}
+                        <li v-cloak v-for="(item, index) in outer.voice" @click="play(item.url)">
+                            <div v-show="item.url === currentUrl" class="kohigashi playing gradients">
+                                <span :class="isPaused? 'paused' : ''">{{currentLanguage === 'ch' ? item.desCh : item.desJp}}</span>
+                                <img v-show="isPaused" src="./resource/img/paused.png" alt="暂停">
+                            </div>
+                            <div v-show="item.url !== currentUrl" class="kohigashi">
+                                <span>{{currentLanguage === 'ch' ? item.desCh : item.desJp}}</span>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -59,7 +65,7 @@
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="./mainfest.js"></script>
+<script src="./MAINFEST.js"></script>
 <script src="./js/main.js"></script>
 
 </html>
