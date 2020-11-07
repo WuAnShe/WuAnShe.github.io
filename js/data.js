@@ -420,6 +420,9 @@ const excel = [
     "suffix": "mp3",
     "desCh": "我不做人了！（惊恐）",
     "desJp": "",
+    "titleCh": "耳膜测试",
+    "titleJp": "鼓膜テスト"
+  },
   {
     "file_name": "闸断xx惊叫",
     "suffix": "mp3",
