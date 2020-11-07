@@ -77,7 +77,7 @@ const excel = [
     "desCh": "你个没骨气的家伙",
     "desJp": "意気地なしめ",
     "titleCh": "别骂了别骂了",
-    "titleJp": "非人類的言語試聴"
+    "titleJp": "もっともっと"
   },
   {
     "file_name": "小东的阿巴阿巴1分洗脑 (1)",
@@ -420,9 +420,6 @@ const excel = [
     "suffix": "mp3",
     "desCh": "我不做人了！（惊恐）",
     "desJp": "",
-    "titleCh": "耳膜测试",
-    "titleJp": "鼓膜テスト"
-  },
   {
     "file_name": "闸断xx惊叫",
     "suffix": "mp3",
